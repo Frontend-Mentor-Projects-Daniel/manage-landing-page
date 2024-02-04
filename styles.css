@@ -1,0 +1,247 @@
+/*----------------- 
+       RESET
+-----------------*/
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+/* Allow percentage-based heights in the application */
+html,
+body,
+#root {
+  height: 100%;
+}
+/* Typographic tweaks! Add accessible line-height Improve text rendering */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/* make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+/* make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Create a root stacking context */
+#root,
+#__next {
+  isolation: isolate;
+}
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*----------------- 
+       THEME
+-----------------*/
+:root {
+  --color-brand-orange: #f3603c;
+  --color-dark-blue: #242d52;
+  --color-black: #1d1e25;
+  --color-very-light-pink: #fff0ec;
+
+  --spacer-main-layout: 1rem;
+  --measure: 69.375rem;
+}
+
+/*----------------- 
+        BODY
+-----------------*/
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  padding-inline: 24px;
+}
+
+/*----------------- 
+      HEADER
+-----------------*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-block: 2.8125rem;
+}
+
+/*----------------- 
+      NAVBAR 
+-----------------*/
+.primary-navigation ul {
+  position: absolute;
+  top: 15%;
+  right: 20px;
+  left: 20px;
+  margin-left: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+
+  border-radius: 4px;
+  box-shadow: 0px 0px 9px 0px #000000;
+  list-style: none;
+  max-width: 400px;
+  padding-block: 40px;
+}
+
+.primary-navigation li {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+.primary-navigation a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .primary-navigation ul {
+    flex-direction: row;
+    gap: 32px;
+
+    position: static;
+    margin: auto;
+
+    box-shadow: none;
+    border-radius: 0px;
+    max-width: none;
+    padding-block: 0px;
+  }
+
+  .primary-navigation li {
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
+/*----------------- 
+      MENU 
+-----------------*/
+.menu-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.menu-btn[aria-expanded='false'] + #menu-list {
+  display: none;
+}
+
+.menu-btn[aria-expanded='true'] + #menu-list {
+  display: flex;
+}
+
+.btn-cta {
+  display: none;
+
+  background-color: var(--color-brand-orange);
+  color: var(--color-very-light-pink);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 99999px;
+  box-shadow: 0px 2px 4px 0px var(--color-brand-orange);
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .menu-btn[aria-expanded] {
+    display: none;
+  }
+
+  .menu-btn[aria-expanded='false'] + #menu-list,
+  .menu-btn[aria-expanded='true'] + #menu-list {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn-cta {
+    display: block;
+  }
+}
+
+/*----------------- 
+     UTILITIES
+-----------------*/
+
+.btn {
+  cursor: pointer;
+}
+
+.center {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure);
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
