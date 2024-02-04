@@ -85,10 +85,13 @@ select {
        THEME
 -----------------*/
 :root {
-  --color-brand-orange: #f3603c;
-  --color-dark-blue: #242d52;
-  --color-black: #1d1e25;
-  --color-very-light-pink: #fff0ec;
+  --color-brand-orange: hsl(12, 88%, 59%);
+  --color-dark-blue: hsl(228, 39%, 23%);
+  --color-black: hsl(233, 12%, 13%);
+  --color-very-light-pink: hsl(13, 100%, 96%);
+
+  --shade-brand-orange: hsl(12, 88%, 79%);
+  --shade-dark-blue-300: hsl(228, 39%, 80%);
 
   --spacer-main-layout: 1rem;
   --measure: 69.375rem;
@@ -141,6 +144,11 @@ body {
 .primary-navigation li {
   color: var(--color-dark-blue);
   font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.primary-navigation li:hover {
+  color: var(--shade-dark-blue-300);
 }
 
 .primary-navigation a {
@@ -198,6 +206,11 @@ body {
   box-shadow: 0px 2px 4px 0px var(--color-brand-orange);
   font-size: 0.8125rem;
   font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--shade-brand-orange);
 }
 
 @media (min-width: 768px) {
