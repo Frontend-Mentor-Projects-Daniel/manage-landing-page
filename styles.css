@@ -93,7 +93,6 @@ select {
   --shade-brand-orange: hsl(12, 88%, 79%);
   --shade-dark-blue-300: hsl(228, 39%, 80%);
 
-  --spacer-main-layout: 1rem;
   --measure: 69.375rem;
 }
 
@@ -101,6 +100,10 @@ select {
         BODY
 -----------------*/
 body {
+  background-image: url('./images/bg-tablet-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -196,6 +199,7 @@ body {
 }
 
 .btn-cta {
+  /* hidden on mobile */
   display: none;
 
   background-color: var(--color-brand-orange);

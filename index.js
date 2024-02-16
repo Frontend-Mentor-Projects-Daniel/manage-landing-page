@@ -1,21 +1,28 @@
-const menuButton = document.querySelector('#js--menu-btn');
-const menuList = menuButton.nextElementSibling;
+// @ts-check
 
-if (!(menuButton instanceof HTMLButtonElement))
-  throw new Error("This isn't a button");
+import { selectElement } from './utils/helpers.js';
 
-if (!(menuList instanceof HTMLUListElement))
-  throw new Error("This isn't an unordered list");
+document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = selectElement('#js--menu-btn', 'button');
+  const menuIcon = menuButton.firstElementChild;
 
-menuButton.addEventListener('click', (e) => {
-  const isExpanded = menuButton.getAttribute('aria-expanded');
-  if (isExpanded != null) {
-    if (isExpanded === 'false') menuButton.setAttribute('aria-expanded', true);
+  menuButton.addEventListener('click', (e) => {
+    const isExpanded = menuButton.getAttribute('aria-expanded');
 
-    if (isExpanded === 'true') menuButton.setAttribute('aria-expanded', false);
-  } else {
-    throw new Error(
-      "This Menu button doesn't have the aria-expanded attribute"
-    );
-  }
+    if (isExpanded != null) {
+      if (isExpanded === 'false') {
+        menuButton.setAttribute('aria-expanded', 'true');
+        menuIcon?.setAttribute('src', './images/icon-close.svg');
+      }
+
+      if (isExpanded === 'true') {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuIcon?.setAttribute('src', './images/icon-hamburger.svg');
+      }
+    } else {
+      throw new Error(
+        "This Menu button doesn't have the aria-expanded attribute"
+      );
+    }
+  });
 });
