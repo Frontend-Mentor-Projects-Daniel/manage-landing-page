@@ -97,22 +97,29 @@ select {
 }
 
 /*----------------- 
-        BODY
+      GLOBAL
 -----------------*/
 body {
+  color: var(--shade-dark-blue-300);
   font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 0.875rem;
+  font-weight: 300;
+  overflow-x: hidden;
   padding-inline: 24px;
 }
 
-.svg-top-right {
-  position: absolute;
-  top: -109px;
-  right: -243px;
-  width: 500px;
-  height: auto;
-  z-index: -1;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+}
+
+p {
+  font-weight: inherit;
 }
 
 /*----------------- 
@@ -127,12 +134,39 @@ body {
   position: relative;
 }
 
+@media (min-width: 1024px) {
+  .header {
+    --measure: 880px;
+  }
+}
+
+/*----------------- 
+       SVG 
+-----------------*/
+
+.header-svg {
+  position: absolute;
+  top: -151px;
+  right: -203px;
+  width: 500px;
+  height: auto;
+  z-index: -1;
+}
+
+@media (min-width: 1024px) {
+  .header-svg {
+    top: -287px;
+    right: -407px;
+    width: 800px;
+  }
+}
+
 /*----------------- 
       NAVBAR 
 -----------------*/
 .primary-navigation ul {
   position: absolute;
-  top: 15%;
+  top: 88%;
   right: 20px;
   left: 20px;
   margin-left: auto;
@@ -143,6 +177,7 @@ body {
   gap: 24px;
   justify-content: center;
 
+  background-color: white;
   border-radius: 4px;
   box-shadow: 0px 0px 9px 0px #000000;
   list-style: none;
@@ -204,23 +239,9 @@ body {
   display: flex;
 }
 
-.btn-cta {
+.header-btn {
   /* hidden on mobile */
   display: none;
-
-  background-color: var(--color-brand-orange);
-  color: var(--color-very-light-pink);
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 99999px;
-  box-shadow: 0px 2px 4px 0px var(--color-brand-orange);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-
-.btn-cta:hover {
-  background-color: var(--shade-brand-orange);
 }
 
 @media (min-width: 768px) {
@@ -236,8 +257,85 @@ body {
 }
 
 @media (min-width: 1024px) {
-  .btn-cta {
+  .header-btn {
     display: block;
+  }
+}
+
+/*----------------- 
+      HERO 
+-----------------*/
+
+/* layout */
+@media (min-width: 1024px) {
+  .hero {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-image {
+    grid-row: 1/2;
+    grid-column: 2/3;
+  }
+
+  .hero-text_content {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-text_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-header {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.hero-text {
+  margin-block-start: 9px;
+  margin-block-end: 29px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-header {
+  }
+
+  .hero-text {
+    max-width: 58ch;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-image {
+    justify-self: start;
+  }
+
+  .hero-text_content {
+    justify-self: end;
+
+    align-items: flex-start;
+  }
+
+  .hero-header {
+    max-width: 15ch;
+    text-align: start;
+  }
+
+  .hero-text {
+    max-width: 28ch;
+    text-align: start;
   }
 }
 
@@ -267,4 +365,23 @@ body {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+/*----------------- 
+    COMPONENTS
+-----------------*/
+.btn--cta {
+  background-color: var(--color-brand-orange);
+  color: var(--color-very-light-pink);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 99999px;
+  box-shadow: 0px 2px 4px 0px var(--color-brand-orange);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.btn--cta:hover {
+  background-color: var(--shade-brand-orange);
 }
