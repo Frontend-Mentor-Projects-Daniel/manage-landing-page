@@ -89,6 +89,7 @@ select {
   --color-dark-blue: hsl(228, 39%, 23%);
   --color-black: hsl(233, 12%, 13%);
   --color-very-light-pink: hsl(13, 100%, 96%);
+  --color-grey: hsl(0, 0%, 98%);
 
   --shade-brand-orange: hsl(12, 88%, 79%);
   --shade-brand-orange-200: hsl(12, 88%, 90%);
@@ -96,7 +97,7 @@ select {
 
   --measure: 60rem;
 
-  --spacer: 1rem;
+  --spacer: 1rem; /* This is mainly for space between groups on the page such as header and hero */
 }
 
 /*----------------- 
@@ -346,7 +347,7 @@ p {
 
 /* INFO */
 .info {
-  --spacer: 93px;
+  --spacer: 129px;
 
   margin-block-start: var(--spacer);
   margin-block-end: calc(var(--spacer) - 62px);
@@ -355,10 +356,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  .info {
-    margin-block-end: calc(142px - var(--spacer));
-  }
-
   /* info layout */
   .info {
     display: grid;
@@ -514,8 +511,16 @@ p {
   white-space: nowrap !important;
 }
 
+.hidden {
+  display: none;
+}
+
 /*----------------- 
     COMPONENTS
+-----------------*/
+
+/*----------------- 
+      BUTTON
 -----------------*/
 .btn--cta {
   background-color: var(--color-brand-orange);
@@ -536,7 +541,68 @@ p {
 /*----------------- 
      CAROUSEL
 -----------------*/
+.carousel-section {
+  --spacer: 48px;
+
+  margin-block-end: var(--spacer);
+}
+
+.carousel-section h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 62px;
+  text-align: center;
+}
+
+/* carousel */
 .carousel {
-  max-inline-size: var(--measure);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
   margin-inline: auto;
+
+  max-inline-size: var(--measure);
+}
+
+/* carousel controls */
+
+/* carousel slides */
+.carousel__slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--color-grey);
+  max-width: 340px;
+
+  padding-inline: 21px;
+  padding-block-end: 42px;
+}
+
+.carousel__slide--active {
+  display: flex;
+}
+
+.carousel__slide-image {
+  transform: translateY(-50%);
+}
+
+.carousel__slide-title {
+  margin-block-end: 19px;
+}
+
+.carousel__slide-description {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .carousel__slide {
+    max-width: 540px;
+    padding-inline: 40px;
+  }
+
+  .carousel__slide-description {
+    max-width: 42ch;
+  }
 }
