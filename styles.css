@@ -532,3 +532,11 @@ p {
 .btn--cta:hover {
   background-color: var(--shade-brand-orange);
 }
+
+/*----------------- 
+     CAROUSEL
+-----------------*/
+.carousel {
+  max-inline-size: var(--measure);
+  margin-inline: auto;
+}
