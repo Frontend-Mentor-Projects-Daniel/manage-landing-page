@@ -94,6 +94,8 @@ select {
   --shade-dark-blue-300: hsl(228, 39%, 80%);
 
   --measure: 69.375rem;
+
+  --spacer: 1rem;
 }
 
 /*----------------- 
@@ -120,6 +122,13 @@ h6 {
 
 p {
   font-weight: inherit;
+  line-height: 28px;
+}
+
+@media (min-width: 768px) {
+  p {
+    line-height: 26px;
+  }
 }
 
 /*----------------- 
@@ -299,6 +308,7 @@ p {
 
 .hero-header {
   font-size: 2.5rem;
+  line-height: 50px;
   text-align: center;
 }
 
@@ -327,6 +337,7 @@ p {
 
   .hero-header {
     max-width: 15ch;
+    line-height: 64px;
     text-align: start;
   }
 
@@ -339,41 +350,109 @@ p {
 /*----------------- 
        INFO 
 -----------------*/
+
 /* INFO */
 .info {
-}
+  --spacer: 93px;
 
-/* INFO__HOOK */
-.info__hook-title {
-  font-size: 1.875rem;
-  font-weight: 800;
+  margin-block-start: var(--spacer);
+  margin-inline: auto;
+  max-inline-size: var(--measure);
 }
 
 @media (min-width: 768px) {
-  .info__hook-title {
+  /* info layout */
+  .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .info__hook {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+
+  .info__list {
+    grid-row: 1/2;
+    grid-column: 2/3;
   }
 }
 
+/* INFO__HOOK */
+.info__hook {
+  margin-block-end: 54px;
+}
+
+.info__hook-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  margin-block-end: 13px;
+  text-align: center;
+}
+
 .info__hook-description {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .info__hook {
+    margin-block-end: 0;
+  }
+
+  .info__hook-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-block-end: 24px;
+    text-align: start;
+  }
+
+  .info__hook-description {
+    font-size: 1rem;
+    max-width: 34ch;
+    text-align: start;
+  }
 }
 
 /* INFO__LIST */
-.info__list {
-}
 
 .info__list-items {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+
+  list-style-type: none;
 }
 
 .info__list-item {
 }
 
 .info__list-item-number {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 .info__list-item-title {
+  font-size: 1rem;
+  line-height: 45px;
+  font-weight: 700;
 }
 
 .info__list-item-description {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  .info__list-items {
+    gap: 40px;
+  }
+
+  .info__list-item-description {
+    font-size: 1rem;
+  }
 }
 
 /*----------------- 
