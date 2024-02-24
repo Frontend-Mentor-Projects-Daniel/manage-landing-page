@@ -427,7 +427,7 @@ p {
 
 .info__list-item {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr;
   grid-template-columns: 0.5fr 10fr;
   align-items: center;
 }
@@ -455,7 +455,6 @@ p {
   background-color: var(--shade-brand-orange-200);
   box-shadow: -20px 0 0 0 var(--shade-brand-orange-200);
   font-size: 1rem;
-  line-height: 45px;
   font-weight: 700;
   padding-inline-start: 15px;
   position: relative;
@@ -478,6 +477,7 @@ p {
   .info__list-item-title {
     background-color: transparent;
     box-shadow: none;
+    line-height: 45px;
     padding-inline-start: 28px;
   }
 
