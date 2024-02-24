@@ -266,7 +266,7 @@ p {
       HERO 
 -----------------*/
 
-/* layout */
+/* hero layout */
 @media (min-width: 1024px) {
   .hero {
     display: grid;
@@ -309,9 +309,6 @@ p {
 }
 
 @media (min-width: 768px) {
-  .hero-header {
-  }
-
   .hero-text {
     max-width: 58ch;
   }
@@ -337,6 +334,46 @@ p {
     max-width: 28ch;
     text-align: start;
   }
+}
+
+/*----------------- 
+       INFO 
+-----------------*/
+/* INFO */
+.info {
+}
+
+/* INFO__HOOK */
+.info__hook-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .info__hook-title {
+  }
+}
+
+.info__hook-description {
+}
+
+/* INFO__LIST */
+.info__list {
+}
+
+.info__list-items {
+}
+
+.info__list-item {
+}
+
+.info__list-item-number {
+}
+
+.info__list-item-title {
+}
+
+.info__list-item-description {
 }
 
 /*----------------- 
