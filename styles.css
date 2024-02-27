@@ -133,6 +133,10 @@ p {
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 /*----------------- 
       HEADER
 -----------------*/
@@ -566,8 +570,35 @@ p {
 }
 
 /* carousel controls */
+.carousel__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.carousel__controls-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  border: 1px solid var(--color-brand-orange);
+  border-radius: 99999px;
+  height: 14px;
+  width: 14px;
+}
+
+.carousel__controls-pagination--active {
+  background-color: var(--color-brand-orange);
+}
 
 /* carousel slides */
+.carousel__slides {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .carousel__slide {
   display: none;
   flex-direction: column;

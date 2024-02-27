@@ -26,7 +26,7 @@
 
     <title>Frontend Mentor | Manage landing page</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
     <style>
       .attribution {
         font-size: 11px;
@@ -188,85 +188,75 @@
             aria-label="Slide controls"
           >
             <!-- pause -->
-            <button aria-label="Stop auto-rotation">
-              <!-- svg icon -->
-              &#9658;
-            </button>
+            <button aria-label="Stop auto-rotation">&#9658;</button>
 
             <!-- slide pickers -->
-            <button aria-disabled="true">
+            <button
+              class="carousel__controls-pagination carousel__controls-pagination--active"
+              aria-disabled="true"
+            >
               <span class="sr-only">Show slide 1 of 3</span>
-              <!-- svg icon -->
-              1
             </button>
 
-            <button aria-disabled="false">
+            <button class="carousel__controls-pagination" aria-disabled="false">
               <span class="sr-only">Show slide 2 of 3</span>
-              <!-- svg icon -->
-              2
             </button>
 
-            <button aria-disabled="false">
+            <button class="carousel__controls-pagination" aria-disabled="false">
               <span class="sr-only">Show slide 3 of 3</span>
-              <!-- svg icon -->
-              3
             </button>
 
             <!-- prev and next -->
-            <button aria-label="Previous Slide">
-              <!-- svg icon -->
-              &larr;
-            </button>
+            <button aria-label="Previous Slide">&larr;</button>
 
-            <button aria-label="Next Slide">
-              <!-- svg icon -->
-              &rarr;
-            </button>
+            <button aria-label="Next Slide">&rarr;</button>
           </div>
           <!-- slides -->
-          <div
-            class="carousel__slide carousel__slide--active"
-            role="group"
-            aria-roledescription="Slide"
-            aria-labelledby="carousel__slide-title--1"
-          >
-            <img
-              class="carousel__slide-image"
-              src="./images/avatar-ali.png"
-              alt=""
-              height="72px"
-              width="72px"
-            />
-            <h3 class="carousel__slide-title" id="carousel__slide-title--1">
-              Ali Bravo
-            </h3>
-            <p class="carousel__slide-description">
-              “We have been able to cancel so many other subscriptions since
-              using Manage. There is no more cross-channel confusion and
-              everyone is much more focused.”
-            </p>
-          </div>
+          <div class="carousel__slides">
+            <div
+              class="carousel__slide carousel__slide--active"
+              role="group"
+              aria-roledescription="Slide"
+              aria-labelledby="carousel__slide-title--1"
+            >
+              <img
+                class="carousel__slide-image"
+                src="./images/avatar-ali.png"
+                alt=""
+                height="72px"
+                width="72px"
+              />
+              <h3 class="carousel__slide-title" id="carousel__slide-title--1">
+                Ali Bravo
+              </h3>
+              <p class="carousel__slide-description">
+                “We have been able to cancel so many other subscriptions since
+                using Manage. There is no more cross-channel confusion and
+                everyone is much more focused.”
+              </p>
+            </div>
 
-          <div
-            class="carousel__slide"
-            role="group"
-            aria-roledescription="Slide"
-            aria-labelledby="carousel__slide-title--2"
-          >
-            <h3 class="carousel__slide-title" id="carousel__slide-title--2">
-              Second Slide
-            </h3>
-          </div>
+            <div
+              class="carousel__slide"
+              role="group"
+              aria-roledescription="Slide"
+              aria-labelledby="carousel__slide-title--2"
+            >
+              <h3 class="carousel__slide-title" id="carousel__slide-title--2">
+                Second Slide
+              </h3>
+            </div>
 
-          <div
-            class="carousel__slide"
-            role="group"
-            aria-roledescription="Slide"
-            aria-labelledby="carousel__slide-title--3"
-          >
-            <h3 class="carousel__slide-title" id="carousel__slide-title--3">
-              Third Slide
-            </h3>
+            <div
+              class="carousel__slide"
+              role="group"
+              aria-roledescription="Slide"
+              aria-labelledby="carousel__slide-title--3"
+            >
+              <h3 class="carousel__slide-title" id="carousel__slide-title--3">
+                Third Slide
+              </h3>
+            </div>
           </div>
         </div>
       </section>
