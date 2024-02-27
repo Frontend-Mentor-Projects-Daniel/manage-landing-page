@@ -95,7 +95,7 @@ select {
   --shade-brand-orange-200: hsl(12, 88%, 90%);
   --shade-dark-blue-300: hsl(228, 39%, 80%);
 
-  --measure: 60rem;
+  --measure: 90rem;
 
   --spacer: 1rem; /* This is mainly for space between groups on the page such as header and hero */
 }
@@ -365,7 +365,6 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    justify-content: space-between;
   }
 
   .info__hook {
