@@ -207,12 +207,17 @@
             </button>
 
             <!-- prev and next -->
-            <button class="btn btn--previous" aria-label="Previous Slide">&larr;</button>
+            <button class="btn btn--previous" aria-label="Previous Slide">
+              &larr;
+            </button>
 
-            <button class="btn btn--next" aria-label="Next Slide">&rarr;</button>
+            <button class="btn btn--next" aria-label="Next Slide">
+              &rarr;
+            </button>
           </div>
           <!-- slides -->
           <div class="carousel__slides">
+            <!-- slide 1 -->
             <div
               class="carousel__slide carousel__slide--active"
               role="group"
@@ -229,33 +234,59 @@
               <h3 class="carousel__slide-title" id="carousel__slide-title--1">
                 Ali Bravo
               </h3>
-              <p class="carousel__slide-description">
+              <blockquote class="carousel__slide-description">
                 “We have been able to cancel so many other subscriptions since
                 using Manage. There is no more cross-channel confusion and
                 everyone is much more focused.”
-              </p>
+              </blockquote>
             </div>
 
+            <!-- slide 2 -->
             <div
               class="carousel__slide"
               role="group"
               aria-roledescription="Slide"
               aria-labelledby="carousel__slide-title--2"
             >
+              <img
+                class="carousel__slide-image"
+                src="./images/avatar-richard.png"
+                alt=""
+                height="72px"
+                width="72px"
+              />
               <h3 class="carousel__slide-title" id="carousel__slide-title--2">
-                Second Slide
+                Richard Watts
               </h3>
+              <blockquote class="carousel__slide-description">
+                “Manage allows us to provide structure and process. It keeps us
+                organized and focused. I can’t stop recommending them to
+                everyone I talk to!”
+              </blockquote>
             </div>
 
+            <!-- slide 3 -->
             <div
               class="carousel__slide"
               role="group"
               aria-roledescription="Slide"
               aria-labelledby="carousel__slide-title--3"
             >
+              <img
+                class="carousel__slide-image"
+                src="./images/avatar-anisha.png"
+                alt=""
+                height="72px"
+                width="72px"
+              />
               <h3 class="carousel__slide-title" id="carousel__slide-title--3">
-                Third Slide
+                Anisha Li
               </h3>
+              <blockquote class="carousel__slide-description">
+                “Manage has supercharged our team’s workflow. The ability to
+                maintain visibility on larger milestones at all times keeps
+                everyone motivated.”
+              </blockquote>
             </div>
           </div>
         </div>
